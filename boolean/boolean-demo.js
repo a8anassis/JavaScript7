@@ -9,13 +9,13 @@ console.log(Boolean([]))      //true
 
 
 while (1) {
-  console.log("Hello")
+  console.log("Hello");
   break;
 }
 
 do {
   console.log("One iteration")
-} while (0)
+} while (0);
 
 for (let i = 1; 1; i++) {
   console.log("In for")
@@ -24,8 +24,8 @@ for (let i = 1; 1; i++) {
 
 let num = 10
 while (num) {
-  console.log(num)
-  num--
+  console.log(num);
+  num--;
 }
 
 // && || !
