@@ -11,3 +11,7 @@ const shoppingCart = {
 
 shoppingCart.addItemToCart({ productName: "Honey", price: 18.59, quantity: 400 }) 
 console.log(shoppingCart.items)
+
+  for (const item of shoppingCart.items) {
+    console.log(item.productName)
+  }
