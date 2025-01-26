@@ -16,7 +16,7 @@ if (Number.isNaN("hello")) {      // 10 / "AUEB"
 }
 
 if (isNaN(NaN)) {
-  console("Is NaN")
+  console.log("Is NaN")
 } else {
   console.log("Not is NaN")
 }
