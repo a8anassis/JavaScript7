@@ -10,11 +10,16 @@ function max(...numbers) {
 }
 console.log(max(1, 6, 9, 3, 88))
 
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0)
+}
+
 function maxx(...numbers) {
-  // return numbers.reduce((total, num) => total + num, 0)
   return Math.max(...numbers)
 }
+
 console.log(sum(1, 2, 7, 9, 22))
+console.log(maxx(5, 3, 8, 9))
 
 function greet(message, ...names) {
   console.log(message + ", " + names.join(", "))
