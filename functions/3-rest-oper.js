@@ -14,8 +14,9 @@ function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0)
 }
 
-function maxx(...numbers) {
-  return Math.max(...numbers)
+// spread vs rest 
+function maxx(...numbers) {   // rest
+  return Math.max(...numbers) // spread
 }
 
 console.log(sum(1, 2, 7, 9, 22))
