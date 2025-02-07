@@ -1,4 +1,4 @@
-const book = { author: {first: "Th.", last: "Andr"} }
+const book = { author: {first: "Th."} }
 
 let lastname = book?.author?.last
 
