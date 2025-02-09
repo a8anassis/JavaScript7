@@ -4,6 +4,7 @@ const numbers = [1, 2, 3, 4]
 numbers.push(5)
 numbers.splice(4, 0, 5)
 
+// Returns a new copy
 function addToArrayEnd(arr, num) {
   return [...arr, num]
 }
@@ -19,9 +20,10 @@ function addToArrayAtIndex(arr, num, index) {
 // Updates
 numbers.splice(3, 1, 8)
 
+// Fresh copy - map all
 const updateArray = (arr, newValue) => arr.map(item => newValue)
 
-// Fresh copy 
+// Fresh copy - map one
 const updateOneItem = (arr, index, newValue) => 
   arr.map((item, i) => (i === index) ? newValue : item) 
 
