@@ -14,13 +14,14 @@ function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0)
 }
 
+console.log(sum(1, 2, 7, 9, 22))
+
 // spread vs rest 
-function maxx(...numbers) {   // rest
-  return Math.max(...numbers) // spread
+function getMax(...numbers) {   // rest
+  return Math.max(...numbers)   // spread
 }
 
-console.log(sum(1, 2, 7, 9, 22))
-console.log(maxx(5, 3, 8, 9))
+console.log(getMax(5, 3, 8, 9))
 
 function greet(message, ...names) {
   console.log(message + ", " + names.join(", "))
