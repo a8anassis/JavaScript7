@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="auebText">Hello AUEB!</p>
+
+
+  <script>
+    function doStyle(e, x, y) {
+      e.style.width = '100px'
+      e.style.textAlign = 'center'
+      e.style.border = '1px solid black'
+      e.style.position = 'absolute'
+      e.style.left = `${x}px`
+      e.style.top = `${y}px`
+    }
+
+    const p = document.getElementById('auebText')
+    doStyle(p, 150, 100)
+
+  </script>
+</body>
+</html>
