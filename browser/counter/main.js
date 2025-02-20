@@ -61,7 +61,7 @@ function styleCounter(counterDOM) {
 //   } else if (counter > 0) {
 //     counterDOM.style.color = 'green'
 //   } else {
-//     counter  DOM.style.color = 'red'
+//     counterDOM.style.color = 'red'
 //   }
 // }
 
