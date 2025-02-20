@@ -56,7 +56,7 @@ function styleCounter(counterDOM) {
 }
 
 // function styleCounter(counterDOM) {
-//   if (counter == 0) {
+//   if (counter === 0) {
 //     counterDOM.style.color = 'black'
 //   } else if (counter > 0) {
 //     counterDOM.style.color = 'green'
