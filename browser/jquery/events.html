@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bg-green {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+  <button type="button" id="btn">Click Me</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script>
+    $('#btn').on('click', () => {
+      $('body').toggleClass('bg-green')
+    })
+  </script>
+</body>
+</html>
