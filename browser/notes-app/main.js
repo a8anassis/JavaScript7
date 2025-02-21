@@ -94,7 +94,7 @@ function deleteNote(key) {
  * View function
  */
 function reset() {
-  document.querySelector('inputNote').value = ""
+  document.querySelector('#inputNote').value = ""
 }
 
 
