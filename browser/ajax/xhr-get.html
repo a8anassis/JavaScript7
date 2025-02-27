@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>XMLHttpRequest GET Request</h1>
+  <button type="button" onclick="fetchOneObj()">Fetch One Object</button>
+  <p id="responseText"></p>
+
+  <script>
+
+    function fetchOneObj() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            handleResponse(JSON.parse(xhr.responseText))
+          } else {
+            showError(xhr.statusText)
+          }
+        }
+      }
+
+      xhr.send();
+    }
+
+    function handleResponse(response) {
+      document.getElementById('responseText').innerHTML = `<b>Title</b>: ${response.title}
+                                                           <br> 
+                                                           <b>Body</b>: ${response.body}`
+    }
+
+    function showError(statusText) {
+      document.getElementById('responseText').innerText = `Error: ${statusText}`
+    }
+
+
+  </script>
+  
+</body>
+</html>
