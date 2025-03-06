@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API</title>
+</head>
+<body>
+  <h1>Fetch API Post</h1>
+  <button type="button" onclick="createPost()">Send Post Request</button>
+  <p id="fetchResponse"></p>
+
+  <script>
+    const createPost = () => {
+
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({        // payload
+          title: "Coding Factory",
+          body: "Coding Factory says Hello",
+          userId: 1
+        })
+      })
+      .then(response => {
+          if (!response.ok) throw new Error(`HTTP Eroor. Status: ${response.status}`);
+          return response.json();
+      })
+      .then(data => {
+        document.getElementById('fetchResponse').innerHTML = `<b>Post created</b>: ${data.title}`
+      })
+      .catch(error => {
+        console.error("Error: ", error); // Logging
+        document.getElementById("fetchResponse").innerHTML = `Error. ${error.message}` // User-friendly localized feedback
+      })
+    }
+  </script>
+
+</body>
+</html>
