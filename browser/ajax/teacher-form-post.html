@@ -76,7 +76,7 @@
       ]
 
       document.getElementById('city').innerHTML = cities
-                                                    .sort((a, b) => a.name.localeCompare(b.name))
+                                                    .sort((a, b) => a.name.localeCompare(b.name, "el-GR"))
                                                     .map(city => `<option value="${city.id}">${city.name}</option>`)
                                                     .join('')
     } catch (error) {
