@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                boxShadow: {
+                    custom: "0px 4px 20px 0px #00000026"
+                }
+            }
+        }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script type="module" src="./js/index.js"></script>
+</head>
+<body class="bg-[#b02e2e] m-0">
+
+  <div id="center" class="text-center">
+    <div class="mb-5">
+        <span class="text-white text-[1.6rem] font-serif text-shadow-custom">Αναζήτηση Ταινιών</span>
+    </div>
+    <div class="mb-5 flex justify-center">
+        <form class="flex items-center">
+            <input id="searchInput" type="text" class="w-64 h-14 pl-10 bg-[url('/apps/movies-app/img/search.png')] bg-no-repeat bg-left bg-[auto_40px] rounded-[20px] border-2 border-black focus:outline-none placeholder:text-slate-600 placeholder:text-sm" placeholder="Πληκτρολογήστε έναν τίτλο" autofocus/>
+            <img id="waiting" class="ml-2 hidden w-10 h-10" src="./img/waiting.gif"></img>
+        </form>
+    </div>
+    <div id="movie" class="movie hidden inline-flex flex-wrap">
+        <div class="w-72 h-[450px] mr-4">
+            <img id="image" class="align-middle" alt='Μη διαθέσιμα εικόνα'></img>
+        </div>
+        <div class="w-[650px] h-[450px]">
+            <div class="basic text-sm">
+                <div class="block text-left mb-4">
+                    <a id="favoriteLink" href="#">
+                        <img id="favoriteImg" alt="favorite" src="./img/favorite.png" width="25" height="25" class="align-middle"></img>
+                    </a>     
+                </div>
+                <div id="title" class="block text-left text-white text-2xl font-mono mb-4">
+                    Τίτλος Ταινίας 
+                </div>
+                <div class="flex justify-start">
+                    <span id="year" class="text-white font-mono">Έτος παραγωγής</span>
+                    <span id="runtime" class="text-white font-mono ml-4">Διάρκεια</span>
+                    <span id="genre" class="text-white font-mono ml-4">Είδος</span>
+                </div>
+                <div class="flex justify-start items-center">
+                    <a id="imdbId" target="blank"><img id="imdb" class="align-bottom" src="./img/imdb.png"></img></a>
+                    <span id="imdbRating" class="text-white font-mono rating ml-2 after:content-['_/_'attr(data-scale)]" data-scale="10">Βαθμολογία</span>
+                </div>
+                <div class="block text-left text-white font-mono">
+                    <p id="plot" class=""></p>
+                </div>
+            </div>
+            <div class="extended text-left hidden mb-4 text-sm">
+                <div id="director" class="text-white font-mono"><b>Σκηνοθεσία: </b><span></span></div>
+                <div id="actors" class="text-white font-mono"><b>Ηθοποιοί: </b><span></span></div>
+                <div id="production" class="text-white font-mono"><b>Παραγωγή: </b><span></span></div>
+                <div id="boxOffice" class="text-white font-mono"><b>Box Office: </b><span></span></div>
+                <div id="language" class="text-white font-mono"><b>Γλώσσα: </b><span></span></div>
+                <div id="rated" class="text-white font-mono"><b>Καταλληλότητα: </b><span></span></div>
+            </div>
+            <div class="flex justify-end">
+                <a id="showMore" class="flex border border-blue-700 text-blue-700 px-[2rem] py-2 no-underline hover:underline" href="#">Περισσότερα
+                    <img class="align-middle w-6 h-6 ml-2 self-center" src="./img/clacket.png"></img>    
+                </a>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div id="notFound" class="hidden text-center">
+    <span class="text-white">Δε βρέθηκαν ταινίες σύμφωνα με τα κριτήρια αναζήτησης.</span>
+</div>
+<div id="error" class="hidden text-center">
+    <span class="text-white">Παρουσιάστηκε σφάλμα κατά την κλήση της υπηρεσίας.</span>
+</div>
+  
+</body>
+</html>
