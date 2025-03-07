@@ -15,7 +15,7 @@
         <!-- First Name -->
         <div>
             <label for="firstName" class="block text-sm font-medium text-gray-700">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required
+            <input type="text" id="firstname" name="firstName" required
                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         </div>
@@ -23,7 +23,7 @@
         <!-- Last Name -->
         <div>
             <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required
+            <input type="text" id="lastname" name="lastName" required
                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         </div>
@@ -83,6 +83,31 @@
       console.error('Error fetching cities')
     }
   }
+
+  const handleFormSubmit = async (event) => {
+
+    event.preventDefault();
+    
+    const formData = {
+      firstname: document.getElementById('firstname').value.trim(),
+      lastname: document.getElementById('lastname').value.trim(),
+      vat: document.getElementById('vat').value.trim(),
+      cityId: document.getElementById('city').value.trim()
+    }
+
+    try {
+
+        const response = await axios.post('https://api-aueb.gr/teachers', formData)
+        console.log('Form submitted successfully', response.data)
+        alert('Teacher data submitted successfully', JSON.stringify(formData) )
+    } catch (error) {
+      console.error('Error in submitting the form.')
+      alert('Failed to submit the teacher form')
+    }
+  } 
+
+
+  
 
 </script>
 
