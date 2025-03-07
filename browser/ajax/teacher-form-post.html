@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Teacher Form</title>
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-6">Teacher Form</h1>
+    <form id="teacherForm" class="space-y-6">
+        <!-- First Name -->
+        <div>
+            <label for="firstName" class="block text-sm font-medium text-gray-700">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required
+                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <!-- Last Name -->
+        <div>
+            <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required
+                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <!-- VAT -->
+        <div>
+            <label for="vat" class="block text-sm font-medium text-gray-700">VAT:</label>
+            <input type="text" id="vat" name="vat" required
+                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <!-- City Dropdown -->
+        <div>
+            <label for="city" class="block text-sm font-medium text-gray-700">City:</label>
+            <select id="city" name="city" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <!-- <option value="">Select a city</option> -->
+            </select>
+        </div>
+
+        <div>
+            <button type="submit"
+                    class="w-full bg-blue-600 text-white border py-2 px-4 rounded-md hover:bg-white 
+                    hover:text-blue-600 hover:border-blue-600 focus:outline-none focus:ring-2 
+                    focus:ring-blue-500 focus:ring-offset-2">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+  const fetchCities = async () => {
+    try {
+      // const response = await axios.get('https://api.aueb.gr/cities');
+      // const cities = response.data;
+
+      // Assume that the API returns an array of city objects
+      const cities = [
+        { id: 1, name: "Αθήνα" },
+        { id: 2, name: "Βόλος" },
+        { id: 3, name: "Ιωάννινα" },
+        { id: 4, name: "Καλαμάτα" },
+        { id: 5, name: "Λαμία" },
+        { id: 6, name: "Δράμα" },
+        { id: 7, name: "Θεσσαλονίκη" },
+      ]
+
+      document.getElementById('city').innerHTML = cities
+                                                    .sort((a, b) => a.name.localeCompare(b.name))
+                                                    .map(city => `<option value="${city.id}">${city.name}</option>`)
+                                                    .join('')
+    } catch (error) {
+      console.error('Error fetching cities')
+    }
+  }
+
+</script>
+
+</body>
+</html>
