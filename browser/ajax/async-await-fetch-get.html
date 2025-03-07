@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Await with fetch API</title>
+</head>
+<body>
+  <button id="btn">Click me to get data</button>
+  <p id="output"></p>
+
+  <script>
+
+    document.getElementById("btn").addEventListener('click', async () => {
+      try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        if (!response.ok) throw new Error('Invalid response');
+        let data = await response.json();
+        document.getElementById('output').innerHTML = `<b>Title:</b> ${data.title} 
+                                                      <br>
+                                                       ${data.body}`
+      } catch (error) {
+        console.error('Fetch error', error)
+        document.getElementById('output').innerHTML = 'Error fetching data'
+      }
+    })
+
+
+  </script>
+</body>
+</html>
