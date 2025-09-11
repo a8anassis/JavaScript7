@@ -23,10 +23,8 @@
       .then(data => {
         document.getElementById('responseText').innerHTML = `<b>Title:</b> ${data.title}`
       })
-      .catch(error => console.error("Error: " + error))
+      .catch(error => console.error("Error: " + error.message))
     }
-
-  
   </script>
 </body>
 </html>

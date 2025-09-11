@@ -17,7 +17,7 @@
       .then(response => {
         document.getElementById('responseText').innerHTML = `<b>Title:</b> ${response.data.title}`
       })
-      .catch(error => console.error("Error: ", error)) 
+      .catch(error => console.error("Error: ", error.message)) 
     }
   </script>
 </body>
