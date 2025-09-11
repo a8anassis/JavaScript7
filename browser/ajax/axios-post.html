@@ -25,9 +25,14 @@
         })
         .catch(error => {
           console.error("Error: ", error); // Logging
-          document.getElementById("axiosResponse").innerHTML = `Error. ${error.message}`
+          //document.getElementById("axiosResponse").innerHTML = `Error. ${error.message}`
+          document.getElementById("axiosResponse").innerHTML = `Error. ${translations[error.response?.data?.errorCode]}`
         })
       }
+
+      const translations = {
+        PostNotFound: "Ποστ δεν βρέθηκε"
+    };
     </script>
 </body>
 </html>
