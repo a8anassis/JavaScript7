@@ -1,12 +1,12 @@
 $(function() {
-  let debounceTimeout = null
-  $('#searchInput').on('input', function() {
+  let debounceTimeout = null  // Debouncing is a programming technique that ensures a function only runs after a certain period of inactivity.
+  $('#searchInput').on('input', function() {  // fires every time the value of an <input> changes
       clearTimeout(debounceTimeout)
       debounceTimeout = setTimeout(() => getMovie(this.value.trim()), 1500)
   })
 
   $('#showMore').on('click', function(e) {
-      e.preventDefault();
+      e.preventDefault();  // #showMore is anchor. clicking it would navigate to the link. But with e.preventDefault(), the navigation is canceled.
       onShowMoreClicked()
   })
 })
@@ -49,7 +49,7 @@ function onApiError() {
 }
 
 function onShowMoreClicked() {
-  $('.extended').slideToggle(1000); // Toggle visibility with a sliding animation
+  $('.extended').slideToggle(1000); // Toggle visibility with a sliding animation, If they are visible, it hides them with a sliding-up animation. If they are hidden, it shows them with a sliding-down animation. 1000 is the animation duration in milliseconds
 }
 
 function showComponent(jQueryComponent) {
