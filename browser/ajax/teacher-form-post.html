@@ -61,18 +61,19 @@
   const fetchCities = async () => {
     try {
       // const response = await axios.get('https://api.aueb.gr/cities');
-      // const cities = response.data;
+      const response = await axios.get('./cities.json');
+      const cities = response.data;
 
       // Assume that the API returns an array of city objects
-      const cities = [
-        { id: 1, name: "Αθήνα" },
-        { id: 2, name: "Βόλος" },
-        { id: 3, name: "Ιωάννινα" },
-        { id: 4, name: "Καλαμάτα" },
-        { id: 5, name: "Λαμία" },
-        { id: 6, name: "Δράμα" },
-        { id: 7, name: "Θεσσαλονίκη" },
-      ]
+      // const cities = [
+      //   { id: 1, name: "Αθήνα" },
+      //   { id: 2, name: "Βόλος" },
+      //   { id: 3, name: "Ιωάννινα" },
+      //   { id: 4, name: "Καλαμάτα" },
+      //   { id: 5, name: "Λαμία" },
+      //   { id: 6, name: "Δράμα" },
+      //   { id: 7, name: "Θεσσαλονίκη" },
+      // ]
 
       document.getElementById('city').innerHTML = cities
                                                     .sort((a, b) => a.name.localeCompare(b.name, "el-GR"))
